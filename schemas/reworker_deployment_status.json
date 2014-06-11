@@ -1,0 +1,18 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "additionalProperties": false,
+
+    "definitions": {
+        "status": {
+             "title": "re-worker status",
+             "type": "string",
+             "enum": [ "started", "completed", "failed" ]
+        }
+    },
+
+    "properties": {
+        "status": {"$ref": "#/definitions/status"}
+    }
+    "required": [ "status" ]
+}
