@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "additionalProperties": false,
+    "title": "re-rest new deployments message format",
+    "description": "Schema for simple and dynamic deployments",
+
+    "definitions": {
+	"group": {"$ref": "playbook_schema.json#/definitions/group"},
+	"dynamic": {"$ref": "playbook_schema.json#/definitions/dynamic"}
+	"playbook_id": {
+	    "type": "string"
+	}
+    }
+
+    "properties": {
+	"group": {"$ref": "#/definitions/group"},
+	"playbook_id": {"$ref": "#/definitions/playbook_id"},
+	"dynamic": {"$ref": "#/definitions/dynamic"}
+    }
+
+    "required": [ "group", "playbook_id" ]
+}
