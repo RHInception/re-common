@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "additionalProperties": false,
+    "title": "re-core deployment message format",
+    "description": "Schema for simple and dynamic deployments"
+
+    "definitions": {
+	"parameters": {
+	    "type": "object",
+	    "properties": {
+		"hosts": {"$ref": "playbook_schema.json#/definitions/hosts"},
+		"subcommand": { "type": "string" },
+		"command": { "type": "string" },
+	    },
+	    "additionalProperties": true
+	}
+	"dynamic": {
+	    "type": "object"
+	}
+    },
+
+
+    "properties": {
+	"parameters": {"$ref": "#/definitions/parameters"},
+	"dynamic": {"$ref": "#/definitions/dynamic"},
+	"group": {"$ref": "playbook_schema.json#/definitions/group"},
+	"notify": {"$ref": "playbook_schema.json#/definitions/notify"}
+    },
+
+    "required": [ "parameters", "dynamic", "group", "notify" ]
+}
