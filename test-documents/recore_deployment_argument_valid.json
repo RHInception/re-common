@@ -1,17 +1,13 @@
 {
-    "name": "docs test",
+    "parameters": {
+        "service": "megafrobber",
+        "hosts": [
+            "host01.example.com"
+        ],
+        "subcommand": "Restart",
+        "command": "service"
+    },
     "group": "test",
-    "execution": [
-        {
-            "description": "sequence 0",
-            "hosts": [ "host01.example.com" ],
-            "steps": [
-                {
-                    "service:Restart": {
-                        "service": "megafrobber"
-                    }
-                }
-            ]
-        }
-    ]
+    "dynamic": {},
+    "notify": {}
 }
