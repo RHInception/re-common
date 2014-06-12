@@ -7,17 +7,17 @@
 
     "definitions": {
 	"group": {"$ref": "playbook_schema.json#/definitions/group"},
-	"dynamic": {"$ref": "playbook_schema.json#/definitions/dynamic"}
+	"dynamic": {"$ref": "playbook_schema.json#/definitions/dynamic"},
 	"playbook_id": {
 	    "type": "string"
 	}
-    }
+    },
 
     "properties": {
 	"group": {"$ref": "#/definitions/group"},
 	"playbook_id": {"$ref": "#/definitions/playbook_id"},
 	"dynamic": {"$ref": "#/definitions/dynamic"}
-    }
+    },
 
     "required": [ "group", "playbook_id" ]
 }

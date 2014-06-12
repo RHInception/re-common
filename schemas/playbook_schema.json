@@ -47,13 +47,20 @@
             "patternProperties": {
                 "^[\\w]+:{1}[\\w]+$": {
                     "type": "object",
-		    "properties": {
-			"notify": {"$ref": "#/definitions/notify"}
-		    },
-		    "minProperties": 1
+                    "properties": {
+                        "notify": {"$ref": "#/definitions/notify"}
+                    },
+                    "minProperties": 1
                 }
             },
-	    "additionalProperties": false
+            "additionalProperties": false
+        },
+        "dynamic": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "minItems": 1
+            }
         },
         "notify": {
             "type": "object",
@@ -67,7 +74,10 @@
         "notify_endpoints": {
             "type": "object",
             "additionalProperties": {
-		"type": "array"
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
             }
         },
         "execution": {

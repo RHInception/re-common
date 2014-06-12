@@ -3,7 +3,7 @@
     "type": "object",
     "additionalProperties": false,
     "title": "re-core deployment message format",
-    "description": "Schema for simple and dynamic deployments"
+    "description": "Schema for simple and dynamic deployments",
 
     "definitions": {
 	"parameters": {
@@ -11,10 +11,10 @@
 	    "properties": {
 		"hosts": {"$ref": "playbook_schema.json#/definitions/hosts"},
 		"subcommand": { "type": "string" },
-		"command": { "type": "string" },
+		"command": { "type": "string" }
 	    },
 	    "additionalProperties": true
-	}
+	},
 	"dynamic": {
 	    "type": "object"
 	}

@@ -13,6 +13,6 @@
 
     "properties": {
         "status": {"$ref": "#/definitions/status"}
-    }
+    },
     "required": [ "status" ]
 }
