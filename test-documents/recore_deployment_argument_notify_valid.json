@@ -1,0 +1,17 @@
+{
+    "parameters": {
+        "service": "megafrobber",
+        "hosts": [
+            "host01.example.com"
+        ],
+        "subcommand": "Restart",
+        "command": "service"
+    },
+    "group": "test",
+    "dynamic": {},
+    "notify": {
+        "started": {
+            "irc": [ "PHB", "#teamchannel" ]
+        }
+    }
+}
