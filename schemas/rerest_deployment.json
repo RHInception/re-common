@@ -10,11 +10,7 @@
 	    "type": "string"
 	},
         "dynamic": {
-            "type": "array",
-            "items": {
-                "type": "string",
-                "minItems": 1
-            }
+            "type": "object"
         },
 	"playbook_id": {
 	    "type": "string"
