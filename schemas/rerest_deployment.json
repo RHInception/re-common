@@ -6,8 +6,16 @@
     "description": "Schema for simple and dynamic deployments",
 
     "definitions": {
-	"group": {"$ref": "playbook_schema.json#/definitions/group"},
-	"dynamic": {"$ref": "playbook_schema.json#/definitions/dynamic"},
+	"group": {
+	    "type": "string"
+	},
+        "dynamic": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "minItems": 1
+            }
+        },
 	"playbook_id": {
 	    "type": "string"
 	}

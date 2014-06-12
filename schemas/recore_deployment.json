@@ -9,7 +9,13 @@
 	"parameters": {
 	    "type": "object",
 	    "properties": {
-		"hosts": {"$ref": "playbook_schema.json#/definitions/hosts"},
+		"hosts": {
+		    "type": "array",
+		    "minItems": 1,
+		    "items": {
+			"type": "string"
+		    }
+		},
 		"subcommand": { "type": "string" },
 		"command": { "type": "string" }
 	    },
@@ -17,15 +23,36 @@
 	},
 	"dynamic": {
 	    "type": "object"
-	}
+	},
+	"group": {
+	    "type": "string"
+	},
+        "notify": {
+            "type": "object",
+            "properties": {
+                "started": {"$ref": "#/definitions/notify_endpoints"},
+                "completed": {"$ref": "#/definitions/notify_endpoints"},
+                "failed": {"$ref": "#/definitions/notify_endpoints"}
+            },
+            "additionalProperties": false
+        },
+        "notify_endpoints": {
+            "type": "object",
+            "additionalProperties": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            }
+        }
     },
 
 
     "properties": {
 	"parameters": {"$ref": "#/definitions/parameters"},
 	"dynamic": {"$ref": "#/definitions/dynamic"},
-	"group": {"$ref": "playbook_schema.json#/definitions/group"},
-	"notify": {"$ref": "playbook_schema.json#/definitions/notify"}
+	"group": {"$ref": "#/definitions/group"},
+	"notify": {"$ref": "#/definitions/notify"}
     },
 
     "required": [ "parameters", "dynamic", "group", "notify" ]
