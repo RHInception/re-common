@@ -1,0 +1,19 @@
+{
+    "parameters": {
+        "command": "juicer",
+        "dynamic": [
+            "cart",
+            "environment"
+        ],
+        "subcommand": "Promote",
+        "hosts": [
+            "host01.example.com"
+        ]
+    },
+    "group": "test",
+    "dynamic": {
+        "cart": "bitmath",
+        "environment": "re"
+    },
+    "notify": {}
+}

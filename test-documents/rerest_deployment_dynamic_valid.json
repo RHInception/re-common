@@ -1,0 +1,8 @@
+{
+    "group": "My Group",
+    "playbook_id": "1234567890",
+    "dynamic": {
+        "cart": "my cart",
+        "environment": "QA"
+    }
+}

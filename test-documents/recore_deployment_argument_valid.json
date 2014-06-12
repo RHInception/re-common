@@ -1,0 +1,17 @@
+{
+    "name": "docs test",
+    "group": "test",
+    "execution": [
+        {
+            "description": "sequence 0",
+            "hosts": [ "host01.example.com" ],
+            "steps": [
+                {
+                    "service:Restart": {
+                        "service": "megafrobber"
+                    }
+                }
+            ]
+        }
+    ]
+}

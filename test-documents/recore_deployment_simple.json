@@ -1,0 +1,10 @@
+{
+    "parameters": {
+        "hosts": [ "host01.example.com" ],
+        "command": "bigip",
+        "subcommand": "OutOfRotation"
+    },
+    "group": "test",
+    "dynamic": {},
+    "notify": {}
+}
