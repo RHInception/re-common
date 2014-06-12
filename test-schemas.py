@@ -55,7 +55,7 @@ def validate_schemas():
 
 def validate_test_documents():
     for doc, schema in test_map.iteritems():
-        print "Validating document %s using %s schema" % (doc, schema)
+#        print "Validating document %s using %s schema" % (doc, schema)
 
         valid = False
         try:
@@ -67,6 +67,8 @@ def validate_test_documents():
 
             jsonschema.validate(test_doc, test_schema)
         except Exception, e:
+            print "----------------------------------------------------------------------------------"
+            print "Error while validating document: %s with %s" % (doc, schema)
             print e
         else:
             valid = True
