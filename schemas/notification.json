@@ -1,0 +1,38 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "additionalProperties": false,
+    "title": "Worker notification message format",
+    "description": "Notifications are sent out by components of the Release Engine and follow a standard message format. This format is then consumed by notification workers who turn the standard format into an external notification of some kind (like email). See http://release-engine.readthedocs.org/en/latest/messageformats.html#notification-message-format for more information.",
+
+    "definitions": {
+	"slug": {
+	    "type": "string",
+	    "maxLength": 80
+	},
+	"message": {
+	    "type": "string"
+	},
+	"phase": {
+	    "type": "string",
+	    "enum": [ "started", "completed", "failed" ]
+	},
+	"target": {
+	    "type": "array",
+	    "minItems": 1,
+	    "items": {
+		"type": "string",
+		"minLength": 1
+	    }
+	}
+    },
+
+    "properties": {
+	"slug": {"$ref": "#/definitions/slug"},
+	"message": {"$ref": "#/definitions/message"},
+	"phase": {"$ref": "#/definitions/phase"},
+	"target": {"$ref": "#/definitions/target"}
+    },
+
+    "required": [ "slug", "message", "phase", "target" ]
+}

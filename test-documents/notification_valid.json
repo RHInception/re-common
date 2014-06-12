@@ -1,0 +1,6 @@
+{
+    "slug": "RPM's have been promoted",
+    "message": "The rpms in deployment 12345667890 have been promoted from DEV to QA and are ready for installation.",
+    "phase": "completed",
+    "target": ["someone@example.com"]
+}
