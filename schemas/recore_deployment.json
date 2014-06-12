@@ -3,7 +3,7 @@
     "type": "object",
     "additionalProperties": false,
     "title": "re-core deployment message format",
-    "description": "Schema for simple and dynamic deployments",
+    "description": "While executing releases, the re-core component emits messages in one of three formats. The format selected is determined by the type of execution step being ran. For more information: http://release-engine.readthedocs.org/en/latest/messageformats.html#deployment-message-formats",
 
     "definitions": {
 	"parameters": {

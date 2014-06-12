@@ -3,7 +3,7 @@
     "type": "object",
     "additionalProperties": false,
     "title": "re-rest new deployments message format",
-    "description": "Schema for simple and dynamic deployments",
+    "description": "Schema for simple and dynamic deployments. For more information: http://release-engine.readthedocs.org/en/latest/messageformats.html#deployment-message-format",
 
     "definitions": {
 	"group": {

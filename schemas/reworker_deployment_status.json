@@ -2,6 +2,8 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "type": "object",
     "additionalProperties": false,
+    "title": "re-worker status updates",
+    "description": "Complimenting the Deployment Message Formats are the Response Message Formats. There are three status messages which workers may reply to re-core with. For more information: http://release-engine.readthedocs.org/en/latest/messageformats.html#response-message-formats",
 
     "definitions": {
         "status": {

@@ -3,6 +3,7 @@
     "type": "object",
     "additionalProperties": false,
     "title": "re-rest new deployments response message format",
+    "description": "This format is sent from re-core back to re-rest which tells re-rest if the deployment was accepted or not. For more information: http://release-engine.readthedocs.org/en/latest/messageformats.html#deployment-response-message-format",
 
     "properties": {
         "id": {
