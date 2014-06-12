@@ -1,33 +1,26 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "http://jsonschema.net#",
     "type": "object",
     "additionalProperties": false,
 
     "definitions": {
         "group": {
-            "id": "#group",
             "type": "string"
         },
         "name": {
-            "id": "#name",
             "type": "string"
         },
         "description": {
-            "id": "#description",
             "type": "string"
         },
         "hosts": {
-            "id": "#hosts",
             "type": "array",
             "minItems": 1,
             "items": {
-                "id": "#0",
                 "type": "string"
             }
         },
         "steps": {
-            "id": "#steps",
             "type": "array",
             "minItems": 1,
             "items": {"$ref": "#/definitions/step_types"}
@@ -81,7 +74,6 @@
             }
         },
         "execution": {
-            "id": "#execution",
             "type": "array",
             "items": {
                 "type": "object",
