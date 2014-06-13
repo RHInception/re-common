@@ -70,15 +70,15 @@ def build_test_map():
     print ""
     test_map = {}
     for test_doc in test_docs:
-        # print "Trying to find a schema for %s" % test_doc
+        print "Trying to find a schema for %s" % test_doc
 
         for schema in schemas:
             schema_basename = schema.replace('.json', '')
-            # print "--- evaluating %s" % schema_basename
+            print "--- evaluating %s" % schema_basename
 
             if test_doc.startswith(schema_basename):
-                # print "--- SCHEMA DISCOVERED: Validating %s with %s" % (
-                #     test_doc, schema_basename)
+                print "--- SCHEMA DISCOVERED: Validating %s with %s" % (
+                    test_doc, schema_basename)
                 test_map[test_doc] = schema
                 break
     return test_map
