@@ -5,7 +5,9 @@
             "host01.example.com"
         ],
         "subcommand": "Restart",
-        "command": "service"
+        "command": "service",
+        "tries": 5,
+        "check_scripts": ["doesitwork"]
     },
     "group": "test",
     "dynamic": {},

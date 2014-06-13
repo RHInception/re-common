@@ -17,7 +17,9 @@
 		    }
 		},
 		"subcommand": { "type": "string" },
-		"command": { "type": "string" }
+		"command": { "type": "string" },
+        "tries": { "type": "number" },
+        "check_scripts": { "type": "array", "items": {"type": "string"}}
 	    },
 	    "additionalProperties": true
 	},
