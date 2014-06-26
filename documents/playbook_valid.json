@@ -2,31 +2,31 @@
     "execution": [
         {
             "hosts": [
-                "foo.dev.example.com", 
+                "foo.dev.example.com",
                 "bar.ops.example.com"
-            ], 
+            ],
             "preflight": [
                 {
                     "yum:Install": {
                         "package": "megafrobber"
                     }
                 }
-            ], 
-            "description": "frobnicate these lil guys", 
+            ],
+            "description": "frobnicate these lil guys",
             "steps": [
-                "bigip:OutOfRotation", 
+                "bigip:OutOfRotation",
                 {
                     "misc:Echo": {
                         "input": "This is a test message"
                     }
-                }, 
+                },
                 {
                     "frob:Nicate": {
-                        "things": "all the things", 
+                        "things": "all the things",
                         "notify": {
                             "started": {
                                 "irc": [
-                                    "PHB", 
+                                    "PHB",
                                     "#myteam"
                                 ]
                             }
@@ -34,27 +34,27 @@
                     }
                 }
             ]
-        }, 
+        },
         {
             "hosts": [
-                "dev.foo.example.com", 
+                "dev.foo.example.com",
                 "ops.bar.example.com"
-            ], 
+            ],
             "steps": [
-                "bigip:OutOfRotation", 
+                "bigip:OutOfRotation",
                 {
                     "misc:ListFrob": {
                         "frob_list": [
-                            "item1", 
-                            "item2", 
+                            "item1",
+                            "item2",
                             "item3"
                         ]
                     }
                 }
-            ], 
+            ],
             "description": "then frobnicate the other half"
         }
-    ], 
-    "group": "inception", 
+    ],
+    "group": "inception",
     "name": "Simple playbook"
 }
