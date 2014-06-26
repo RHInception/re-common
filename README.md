@@ -8,29 +8,45 @@ For more documentation see the
 documentation.
 
 
+Testing A New Playbook
+----------------------
+
+Say you want to test a new playbook. You must name your test playbook
+so that it begins with ``playbook``. Also, it must be a **json** file
+(use ``yaml2json.py`` if you have a YAML file).
+
+    $ cp my_playbook.json documents/playbook_test.json
+	$ ./test-schemas.py
+
+
 Running the Tests
 -----------------
 
     $ ./test-schemas.py
-    Schema Validity:
-    {'playbook_schema.json': True,
-     'recore_deployment.json': True,
-     'rerest_deployment.json': True,
-     'rerest_deployment_response.json': True,
-     'reworker_deployment_status.json': True}
+    Building document -> schema test mapping...
 
-    Document Validity:
-    {'playbook_schema_valid.json': True,
-     'recore_deployment_argument_notify_valid.json': True,
-     'recore_deployment_argument_valid.json': True,
-     'recore_deployment_dynamic_valid.json': True,
-     'recore_deployment_simple.json': True,
-     'rerest_deployment_dynamic_valid.json': True,
-     'rerest_deployment_response_failed_valid.json': True,
-     'rerest_deployment_response_success_valid.json': True,
-     'rerest_deployment_simple_valid.json': True,
-     'reworker_deployment_status_completed_valid.json': True,
-     'reworker_deployment_status_failed_valid.json': True,
-     'reworker_deployment_status_started_valid.json': True}
+    Validating each schema...
+    Schema Validation Results:
+    reworker_deployment_status.json: PASSED
+    rerest_response_deployment.json: PASSED
+    recore_deployment.json: PASSED
+    rerest_deployment.json: PASSED
+    notification.json: PASSED
+    playbooks.json: PASSED
 
+    Validating each test document...
+    Document Validation Results:
+    rerest_deployment_simple_valid.json: PASSED
+    notification_valid.json: PASSED
+    rerest_deployment_dynamic_valid.json: PASSED
+    recore_deployment_argument_notify_valid.json: PASSED
+    reworker_deployment_status_started_valid.json: PASSED
+    recore_deployment_argument_valid.json: PASSED
+    rerest_response_deployment_success_valid.json: PASSED
+    reworker_deployment_status_completed_valid.json: PASSED
+    rerest_response_deployment_failed_valid.json: PASSED
+    recore_deployment_simple.json: PASSED
+    recore_deployment_dynamic_valid.json: PASSED
+    reworker_deployment_status_failed_valid.json: PASSED
+[
 Any errors will be spit out at run-time.

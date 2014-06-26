@@ -8,7 +8,7 @@ from jsonschema import Draft4Validator
 import json
 
 schema_dir = 'schemas'
-test_dir = 'test-documents'
+test_dir = 'documents'
 
 schemas = os.listdir(schema_dir)
 test_docs = os.listdir(test_dir)
