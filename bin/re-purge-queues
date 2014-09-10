@@ -1,0 +1,52 @@
+#!/usr/bin/env python
+
+# TODO: Change so that the queue endpoints for each environment are
+# read from a config file.
+
+
+try:
+    import requests
+except ImportError:
+    raise SystemExit("Unable to import 'requests' library. Please install python-requests to continue")
+
+try:
+    import argparse
+except ImportError:
+    raise SystemExit("Unable to import 'argparse' library. Please install python-argparse to continue")
+
+import getpass
+
+######################################################################
+
+parser = argparse.ArgumentParser(description='Purge RabbitMQ queue(s)')
+parser.add_argument('-e', '--environment',
+                    nargs='+', required=True,
+                    help='Environment(s) to purge')
+parser.add_argument('-q', '--queue',
+                    nargs='+', required=True,
+                    help='Queue(s) to purge')
+args = parser.parse_args()
+
+headers = {"content-type": "application/json"}
+
+######################################################################
+
+raise SystemExit("Not complete yet. Comment out this line and update 'baseurl' below to use")
+
+for e in args.environment:
+    hdr = "In environment: %s" % e
+    print hdr.upper()
+    print "-" * len(hdr)
+
+    auth = ('inceptadmin', getpass.getpass(prompt='Password for %s: ' % e))
+
+    for q in args.queue:
+        baseurl = 'http://mq01.%s.example.com:15672/api/queues/%%2F/%s/contents' % \
+                  (e, q)
+
+        print baseurl
+        d = requests.delete(baseurl,
+                            headers=headers,
+                            verify=False,
+                            auth=auth)
+    print ""
